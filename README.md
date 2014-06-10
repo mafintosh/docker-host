@@ -1,6 +1,6 @@
 # docker-host
 
-Tiny module that converts a host to docker (usually `$DOCKER_HOST`) so a standard http url
+Tiny module that converts a host to docker (usually `$DOCKER_HOST`) to a standard http url
 
 ```
 npm install docker-host
