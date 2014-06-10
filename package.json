@@ -1,0 +1,28 @@
+{
+  "name": "docker-host",
+  "version": "0.0.0",
+  "description": "Tiny module that converts a host to docker (usually `$DOCKER_HOST`) so a standard http url",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mafintosh/docker-host"
+  },
+  "keywords": [
+    "docker",
+    "host",
+    "parse",
+    "DOCKER_HOST"
+  ],
+  "author": "Mathias Buus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/docker-host/issues"
+  },
+  "homepage": "https://github.com/mafintosh/docker-host",
+  "devDependencies": {
+    "tape": "^2.13.2"
+  }
+}
