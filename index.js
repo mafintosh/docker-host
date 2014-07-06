@@ -10,7 +10,10 @@ module.exports = function(remote) {
   var host = parts[2] || 'localhost'
   var port = parts[3] || 2375
 
-  if (protocol === 'unix' || host[0] === '/') return {socketPath:host}
+  if (protocol === 'tcp') protocol = 'http'
+  if (host[0] === '/') protocol = 'unix'
+
+  if (protocol === 'unix') return {socketPath:host, protocol:'unix:'}
   if (host === '0.0.0.0') host = 'localhost'
-  return {host:host, port:parseInt(port, 10)}
+  return {host:host, port:parseInt(port, 10), protocol:protocol+':'}
 }
