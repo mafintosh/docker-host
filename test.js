@@ -22,15 +22,15 @@ tape('0.0.0.0', function(t) {
 })
 
 tape('unix', function(t) {
-  t.same(host('unix:///foo.sock'), {socketPath:'/foo.sock', protocol:'unix:'})
-  t.same(host('/foo.sock'), {socketPath:'/foo.sock', protocol:'unix:'})
+  t.same(host('unix:///foo.sock'), {socketPath:'/foo.sock', protocol:'http:'})
+  t.same(host('/foo.sock'), {socketPath:'/foo.sock', protocol:'http:'})
   t.end()
 })
 
 tape('env', function(t) {
   process.env.DOCKER_HOST = ''
-  t.same(host(), {socketPath:'/var/run/docker.sock', protocol:'unix:'})
+  t.same(host(), {socketPath:'/var/run/docker.sock', protocol:'http:'})
   process.env.DOCKER_HOST = 'unix:///env.sock'
-  t.same(host(), {socketPath:'/env.sock', protocol:'unix:'})
+  t.same(host(), {socketPath:'/env.sock', protocol:'http:'})
   t.end()
 })
