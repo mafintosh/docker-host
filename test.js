@@ -35,8 +35,3 @@ tape('env', function(t) {
   t.end()
 })
 
-tape('support object shorthand', function(t) {
-  t.same(host({host:'localhost'}), {host:'localhost', port:2375, protocol:'http:'})
-  t.same(host(host(':2375')), {host:'localhost', port:2375, protocol:'http:'})
-  t.end()
-})
