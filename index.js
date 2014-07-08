@@ -1,4 +1,6 @@
 module.exports = function(remote) {
+  if (remote && (remote.host || remote.socketPath)) return remote
+
   if (!remote) remote = process.env.DOCKER_HOST || 'unix:///var/run/docker.sock'
   if (typeof remote === 'number') return {host:'localhost', port:remote}
   if (remote.indexOf('://') === -1) remote = 'tcp://'+remote

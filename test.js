@@ -34,3 +34,8 @@ tape('env', function(t) {
   t.same(host(), {socketPath:'/env.sock', protocol:'http:'})
   t.end()
 })
+
+tape('support object shorthand', function(t) {
+  t.same(host(host(':2375')), {host:'localhost', port:2375, protocol:'http:'})
+  t.end()
+})
